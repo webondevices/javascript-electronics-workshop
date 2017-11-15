@@ -1,0 +1,1 @@
+Example projects for the JavaScript Electronics Workshop
