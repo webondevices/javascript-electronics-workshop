@@ -8,7 +8,7 @@ arduino.on('ready', function () {
     var thermometer = new five.Thermometer({
         controller: 'LM35',
         pin: 'A0',
-        freq: 1000
+        freq: 2000
     });
 
     // Data event listener with callback function

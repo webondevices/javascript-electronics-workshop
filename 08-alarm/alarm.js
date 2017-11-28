@@ -6,8 +6,8 @@ var arduino = new five.Board();
 arduino.on('ready', function () {
     
     // Access the motion sensor
-    var motion = new five.IR.Motion(6);
-    var led = new five.Led(4);
+    var motion = new five.Motion(2);
+    var led = new five.Led(6);
     var audio = null;
 
     // Event listeners with callback functions

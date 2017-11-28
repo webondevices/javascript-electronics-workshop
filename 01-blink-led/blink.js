@@ -10,9 +10,9 @@ arduino.on('ready', function () {
     var led = new five.Led(6);
 
     // Blink the LED every half second
-    // led.blink(50);
+    led.blink(2000);
 
     // Pulsate LED
-    led.pulse();
+    // led.pulse();
 
 });

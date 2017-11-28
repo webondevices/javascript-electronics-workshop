@@ -10,9 +10,11 @@ var numberOfClients = 0;
 
 function sendData(sensorValue) {
 
+    console.log(sensorValue);
+
 	// Only send data when there are connected users
 	if (numberOfClients > 0) {
-		io.sockets.emit('sensor reading', { temp: sensorValue });
+		io.sockets.emit('sensor reading', sensorValue );
 	}
 }
 
@@ -41,16 +43,20 @@ arduino.on('ready', function () {
 		});
 	});
     
-    // Access the temperature sensor on pin A0
-    var thermometer = new five.Thermometer({
-        controller: 'LM35',
+    // Access the light sensor on pin A0
+    var lightSensor = new five.Sensor({
         pin: 'A0',
-        freq: 1000
+        freq: 50
     });
 
     // Data event listener with callback function
     // Will capture incoming sensor readings
-    thermometer.on('data', function () {
-        sendData(this.C);
+
+    lightSensor.on('data', function () {
+        
+        // Convert 0 - 1023 reading to percentage
+        var percentage = parseInt(((1024 - this.value) / 1024) * 100);
+
+        sendData(percentage);
     });
 });
