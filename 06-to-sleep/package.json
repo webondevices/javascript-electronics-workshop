@@ -1,0 +1,20 @@
+{
+  "name": "4-push-button",
+  "version": "1.0.0",
+  "description": "Detect button press",
+  "main": "button.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/webondevices"
+  },
+  "keywords": [
+    "javascript",
+    "arduino",
+    "sensor"
+  ],
+  "author": "Mate Marschalko",
+  "license": "ISC",
+  "dependencies": {
+    "johnny-five": "^0.10.6"
+  }
+}
